@@ -33,8 +33,23 @@ Everything is modernized into a Fragment, so you can add it to your layout like 
             android:id="@+id/scanner"
             android:layout_width="match_parent" android:layout_height="match_parent" />
 
-And by accessing the Fragment instance itself you can use `setDecodeCallback()` to set a new callback to fall down onto
+And by accessing the Fragment instance itself you can use `setDecodeCallback()` to set a new callback to fall down onto.
 
-## Documentation
+Also, in the callback you will need to ask the fragment to start rescanning using `restartScanning()` or `restartScanningIn( <value-in-milliseconds> )`. Like so:
 
-TODO
+	final ZXingFragment xf = (ZXingFragment) getSupportFragmentManager().findFragmentById(R.id.scanner);
+        xf.setDecodeCallback(new DecodeCallback(){
+
+			@Override
+			public void handleBarcode(Result result, Bitmap arg1, float arg2) {
+				Toast.makeText(HelloAndroidActivity.this, result.getText(), Toast.LENGTH_LONG).show();
+				xf.restartScanningIn(200);
+			}
+        	
+        });
+
+## TODO
+
+* Make the viewfinder in the right place (modifying the way it gets height/width).
+* Remove un-needed code
+* Deploy to Maven Central somehow
