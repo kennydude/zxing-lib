@@ -3,7 +3,6 @@ package zxing.library;
 import java.io.IOException;
 
 import com.google.zxing.Result;
-import com.google.zxing.client.android.CaptureActivityHandler;
 import com.google.zxing.client.android.FinishListener;
 import com.google.zxing.client.android.R;
 import com.google.zxing.client.android.ViewfinderView;
