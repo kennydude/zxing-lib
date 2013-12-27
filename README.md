@@ -1,5 +1,7 @@
 # ZXing Barcode Scanner Android library
 
+**Note:** This software is now in the public domain. I have no further use for it, so it is EOL-ed. (However if you use it, I'd love to see what you do with it)
+
 This allows for you to directly embed ZXing into your application **properly**.
 
 Please note: This does not contain enough (any more) to work as the normal ZXing application on it's own. Resources are missing and it will look crap. (The CaptureActivity and other stuff is to be removed when I get round to doing it).
